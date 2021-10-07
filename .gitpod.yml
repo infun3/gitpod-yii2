@@ -17,13 +17,13 @@ tasks:
   # init: Will be executed one time when creating a workspace, command: will be exected each time you open workspace
   - init: |
       composer update
-      composer create-project --prefer-dist yiisoft/yii2-app-basic basic
+      composer create-project --prefer-dist yiisoft/yii2-app-basic basic 
       cd basic/
       mysql -e "CREATE DATABASE IF NOT EXISTS yii2basic;"
       chmod +x ./yii
       chmod +x ./tests/bin/yii
       sudo service mysql restart
-      gp await-port 8080 && php yii serve
+      php yii serve && gp await-port 8080 && gp preview $(gp url 8080)
     # command: |
     #   sudo service mysql restart
     #   ./tests/bin/yii migrate --interactive=0
