@@ -9,7 +9,7 @@ ports:
 
 vscode:
   extensions:
-    - ms-azuretools.vscode-docker@1.8.1:xuHtLS23Q5czFwYH7grcCQ==
+    - ms-azuretools.vscode-docker@1.8.1
 
 
 # start up tasks
