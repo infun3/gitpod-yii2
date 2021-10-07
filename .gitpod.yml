@@ -17,7 +17,8 @@ tasks:
   # init: Will be executed one time when creating a workspace, command: will be exected each time you open workspace
   - init: |
       composer update
-      composer create-project --prefer-dist yiisoft/yii2-app-basic ./
+      composer create-project --prefer-dist yiisoft/yii2-app-basic basic
+      cd basic/
       mysql -e "CREATE DATABASE IF NOT EXISTS yii2basic;"
       chmod +x ./yii
       chmod +x ./tests/bin/yii
