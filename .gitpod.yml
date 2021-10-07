@@ -23,12 +23,13 @@ tasks:
       chmod +x ./yii
       chmod +x ./tests/bin/yii
       sudo service mysql restart
+      gp await-port 8080 && php yii serve
     # command: |
     #   sudo service mysql restart
     #   ./tests/bin/yii migrate --interactive=0
     #   ./yii migrate --interactive=0
     #   ./vendor/bin/codecept build
     #   ./tests/bin/yii serve
-  - command: gp await-port 8080 && php yii serve
+  # - command: gp await-port 8080 && php yii serve
   # - command: gp await-port 8080 && ./vendor/bin/codecept run --coverage
   # - command: gp await-port 8080 && gp preview $(gp url 8080)
