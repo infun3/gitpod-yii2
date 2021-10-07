@@ -22,11 +22,12 @@ tasks:
       mysql -e "CREATE DATABASE IF NOT EXISTS yii2basic;"
       chmod +x ./yii
       chmod +x ./tests/bin/yii
-    command: |
       sudo service mysql restart
-      ./tests/bin/yii migrate --interactive=0
-      ./yii migrate --interactive=0
-      ./vendor/bin/codecept build
-      ./tests/bin/yii serve
+    # command: |
+    #   sudo service mysql restart
+    #   ./tests/bin/yii migrate --interactive=0
+    #   ./yii migrate --interactive=0
+    #   ./vendor/bin/codecept build
+    #   ./tests/bin/yii serve
   - command: gp await-port 8080 && ./vendor/bin/codecept run --coverage
   # - command: gp await-port 8080 && gp preview $(gp url 8080)
