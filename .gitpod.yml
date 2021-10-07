@@ -18,11 +18,12 @@ tasks:
   - init: |
       composer update
       composer create-project --prefer-dist yiisoft/yii2-app-basic basic 
-      cd basic/
       mysql -e "CREATE DATABASE IF NOT EXISTS yii2basic;"
       chmod +x ./yii
       chmod +x ./tests/bin/yii
       sudo service mysql restart
+    command: |
+      cd basic/
       php yii serve && gp await-port 8080 && gp preview $(gp url 8080)
     # command: |
     #   sudo service mysql restart
