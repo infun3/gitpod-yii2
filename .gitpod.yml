@@ -29,5 +29,6 @@ tasks:
     #   ./yii migrate --interactive=0
     #   ./vendor/bin/codecept build
     #   ./tests/bin/yii serve
-  - command: gp await-port 8080 && ./vendor/bin/codecept run --coverage
+  - command: gp await-port 8080 && php yii serve
+  # - command: gp await-port 8080 && ./vendor/bin/codecept run --coverage
   # - command: gp await-port 8080 && gp preview $(gp url 8080)
